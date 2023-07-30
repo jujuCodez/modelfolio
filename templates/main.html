@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @font-face {
+            font-family: "Keystone";
+            src: url("fonts/Keystone.t") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Gexo Sans";
+            src: url("fonts/Gexo Sans.ttf") format("truetype");
+        }
+
         body {
-            background: rgb(92,19,1);
-            background: linear-gradient(90deg, rgba(92,19,1,1) 0%, rgba(0,0,103,1) 50%, rgba(56,0,116,1) 100%);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black; /* Change the background to black */
             color: white;
+            overflow: hidden; /* Hide the scrollbar */
         }
 
         a {
@@ -26,12 +39,37 @@
             display: table;
             clear: both;
         }
+
+        /* Define the animation */
+        @keyframes gradientShift {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 25%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+
+        .keystone {
+            font-family: "Keystone";
+            text-align: center;
+        }
+
+        .gexo-sans-font {
+            font-family: "Gexo Sans";
+            text-align: center;
+        }
+
     </style>
     <title>ADRIAN NEAH LOZADA</title>
 </head>
 <body>
-    <h1 style="text-align: center"> ADRIAN NEAH LOAZADA </h1>
-    <h5 style="text-align: center"> PART-TIME FREELANCE MODEL </h5>
+    {% block content %}
+
+    {% endblock content %}
     <hr>
     <div class="row">
         <div class="column"> <a href="/about"> ABOUT </a></div>
@@ -40,9 +78,5 @@
     </div>
     <hr>
     {% include 'navbar.html' %}
-
-    {% block content %}
-
-    {% endblock content %}
 </body>
 </html>
